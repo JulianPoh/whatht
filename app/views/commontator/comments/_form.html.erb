@@ -26,7 +26,7 @@
 
   <%= hidden_field_tag :per_page, per_page %>
   
-  <div class="comment_form_field">
+  <div class="comment_form_field" style="max-width: 600px;">
     <%= f.text_area :body, rows: '7' %>
     <%= javascript_tag('Commontator.initMentions()') if Commontator.mentions_enabled %>
   </div>
