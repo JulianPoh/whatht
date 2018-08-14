@@ -2,6 +2,8 @@
 <h1>Posts</h1>
 <% if user_signed_in? %>
 <%= link_to 'Create New Post', new_post_path %>
+<% else %>
+You have to be signed in to create new posts.
 <% end %>
 <br>
 <br>
