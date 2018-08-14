@@ -20,18 +20,18 @@
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <%= link_to 'Home', posts_path, class: "nav-link" %>
+            <%= link_to 'Home', root_path, class: "nav-link" %>
           </li>
-          <li class="nav-item">
+          <li class="nav-item active">
             <% if user_signed_in? %>
             <li class="nav-item">
               <%= link_to 'Sign Out', destroy_user_session_url, method: :delete, class: "nav-link" %>
             </li>
             <% else %>
-            <li class="nav-item">
+            <li class="nav-item active">
               <%= link_to 'Sign In', new_user_session_url, class: "nav-link" %>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
               <%= link_to 'Sign Up', new_user_registration_path, class: "nav-link" %>
             </li>
             <% end %>
@@ -52,7 +52,7 @@
     <footer class="footer">
       <div class="col-lg-12 text-center">
         <p>DISCLAIMER</p>
-        <span class="text-muted"><p>The information contained within is for information purposes and may not be accurate, factual or even legal. All advise given in comments are non-professional and should not be acted upon without consulting a professional. Entry to the site waives all legal rights to any loss or damage incurred as a result of following the information within. All contents are copyright of their individual owners and should not be used for commercial or illegal purposes.</p></span>
+        <span class="text-muted"><p>Please be aware that any information you may find on this website may be inaccurate, misleading, dangerous, addictive, unethical or illegal. Always consult a professional.</p></span>
       </div>
     </footer>
 
