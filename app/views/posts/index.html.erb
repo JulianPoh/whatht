@@ -12,11 +12,11 @@ You have to be signed in to create new posts.
 <div class="card-deck">
 <% @posts.each do |post| %>
 <% if post.category == "Creatures" %>
-<div class="card text-white bg-dark mb-3" style="min-width: 15rem; max-width: 15rem;">
+<div class="card text-white bg-dark mb-3 mx-auto" style="min-width: 16rem; max-width: 17rem;">
 <% elsif post.category == "Objects" %>
-<div class="card text-white bg-primary mb-3" style="min-width: 15rem; max-width: 15rem;">
+<div class="card text-white bg-primary mb-3 mx-auto" style="min-width: 16rem; max-width: 17rem;">
 <% elsif post.category == "Medical" %>
-<div class="card text-white bg-success mb-3" style="min-width: 15rem; max-width: 15rem;">
+<div class="card text-white bg-success mb-3 mx-auto" style="min-width: 16rem; max-width: 17rem;">
 <% end %>
   <div class="card-header">
     <h5><%= post.category %></h5>
@@ -25,6 +25,9 @@ You have to be signed in to create new posts.
   <div class="card-body">
     <h5 class="card-title"><%= post.title %></h5>
     <p class="card-text"><%= post.body %><p>
+  </div>
+  <div>
+  <%= commontator_thread(post) %>
   </div>
   <div class="card-footer text-center" style="text-decoration: none;">
   <% if current_user == (post.user) %>
