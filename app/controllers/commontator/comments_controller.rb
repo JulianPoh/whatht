@@ -48,8 +48,6 @@ module Commontator
       end
     end
     
-    flash[:success] = "Shop updated"
-    redirect_to([:admin, @shop])
     # GET /comments/1/edit
     def edit
       security_transgression_unless @comment.can_be_edited_by?(@user)
