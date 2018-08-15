@@ -1,0 +1,9 @@
+development:
+  cloud_name: "jp01"
+  api_key: "169863952313959"
+  api_secret: "OTAGNdr03CxWjWl9cXNV7nGflAs"
+
+production:
+  cloud_name: "jp01"
+  api_key: "169863952313959"
+  api_secret: "OTAGNdr03CxWjWl9cXNV7nGflAs"
