@@ -25,7 +25,7 @@
       
       <div>
       <%= form.label :category %>
-      <%= form.select :category, ['Creatures', 'Objects', 'Medical'], class: "form-control" %>
+      <%= form.select :category, ['CREATURE', 'THING', 'ONMAHBODY'], class: "form-control" %>
       </div>
 
       <div class="field">
@@ -37,9 +37,10 @@
         <%= form.label :image %>
         <%= form.file_field :image %>
       </div>
-
+      <br>
+      <br>
       <div class="actions">
-        <%= form.submit %>
+        <button type="button" class="btn btn-outline-danger"><%= form.submit %></button>
       </div>
       <% end %>
     </div>

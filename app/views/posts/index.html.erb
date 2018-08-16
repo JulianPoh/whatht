@@ -1,7 +1,7 @@
 <div class="col-lg-12 text-center">       
-<h1>Posts</h1>
+<h1 style="font-family: 'Frijole', cursive; color: dark;">Posts</h1>
 <% if user_signed_in? %>
-<%= link_to 'Create New Post', new_post_path %>
+<%= link_to 'Create New Post', new_post_path, {:style=>'color:red; font-size: 1rem; font-family: Frijole ', :class => "css_class"} %>
 <% else %>
 You have to be signed in to create new posts.
 <% end %>
@@ -10,10 +10,10 @@ You have to be signed in to create new posts.
 <br>
 
 <div class="btn-group" role="group" aria-label="Basic example">
-  <button type="button" class="btn btn-warning">Show All</button>
-  <button type="button" class="btn btn-dark">Creatures</button>
-  <button type="button" class="btn btn-success">Objects</button>
-  <button type="button" class="btn btn-danger">Medical</button>
+  <button type="button" class="btn btn-warning" style="font-family: 'Frijole', cursive; color: red;"><%= link_to "Show All", posts_path, {:style=>'color:#FFFFFF;', :class => "css_class"} %></button>
+  <button type="button" class="btn btn-secondary" style="font-family: 'Frijole', cursive; color: white;"><%= link_to "WHATHT CREATURE", posts_path(category: 'CREATURE'), {:style=>'color:#FFFFFF;', :class => "css_class"} %></button>
+  <button type="button" class="btn btn-success" style="font-family: 'Frijole', cursive; color: white;"><%= link_to "WHATHT THING", posts_path(category: 'THING'), {:style=>'color:#FFFFFF;', :class => "css_class"} %></button>
+  <button type="button" class="btn btn-danger" style="font-family: 'Frijole', cursive; color: white;"><%= link_to "WHATHT ONMAHBODY", posts_path(category: 'ONMAHBODY'), {:style=>'color:#FFFFFF;', :class => "css_class"} %></button>
 </div>
 
 </div>
@@ -22,16 +22,16 @@ You have to be signed in to create new posts.
 <div class="container"> 
 <div class="card-deck">
 <% @posts.each do |post| %>
-<% if post.category == "Creatures" %>
-<div class="card text-white bg-dark mb-3 mx-auto" style="min-width: 16rem; max-width: 17rem;">
-<% elsif post.category == "Objects" %>
-<div class="card text-white bg-success mb-3 mx-auto" style="min-width: 16rem; max-width: 17rem;">
-<% elsif post.category == "Medical" %>
-<div class="card text-white bg-danger mb-3 mx-auto" style="min-width: 16rem; max-width: 17rem;">
+<% if post.category == "CREATURE" %>
+<div class="card text-white bg-secondary mb-3 mx-auto" style="min-width: 16rem; max-width: 17rem; color: white;">
+<% elsif post.category == "THING" %>
+<div class="card text-white bg-success mb-3 mx-auto" style="min-width: 16rem; max-width: 17rem; color: white">
+<% elsif post.category == "ONMAHBODY" %>
+<div class="card text-white bg-danger mb-3 mx-auto" style="min-width: 16rem; max-width: 17rem; color: white">
 <% end %>
  
   <div class="card-header">
-    <h5><%= post.category %></h5>
+    <h7 style="font-family: 'Frijole', cursive;">WHATHT <%= post.category %></h5>
   </div>
  
   <img class="card-img-top" src="<%= post.image %>" alt="Card image cap" style="height: auto; width: auto; max-height: 10rem;">
@@ -47,11 +47,11 @@ You have to be signed in to create new posts.
  
   <div class="card-footer text-center" style="text-decoration: none;">
   <% if current_user == (post.user) %>
-    <a href="#" class="card-link active"><%= link_to 'View', post, {:style=>'color:#FFFFFF;', :class => "css_class"} %></a>
-    <a href="#" class="card-link active"><%= link_to 'Edit', edit_post_path(post), {:style=>'color:#FFFFFF;', :class => "css_class"} %></a>
-    <a href="#" class="card-link active"><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure you want to delete this post?' } %></td></a>
+    <button type="button" class="btn btn-outline-dark"><%= link_to 'View', post, {:style=>'color:#FFFFFF;', :class => "css_class"} %></button>
+    <button type="button" class="btn btn-outline-dark"><%= link_to 'Edit', edit_post_path(post), {:style=>'color:#FFFFFF;', :class => "css_class"} %></button>
+    <button type="button" class="btn btn-outline-dark"><%= link_to 'Delete', post, method: :delete, data: {confirm: 'Are you sure you want to delete this post?', :style=>'color:#FFFFFF;', :class => "css_class" } %></button>
   <% else %>
-    <a href="#" class="card-link active"><%= link_to 'View', post, {:style=>'color:#FFFFFF;', :class => "css_class"} %></a>
+    <button type="button" class="btn btn-outline-dark"><%= link_to 'View', post, {:style=>'color:#FFFFFF;', :class => "css_class"} %></button>
   <% end %>
   </div>
  
