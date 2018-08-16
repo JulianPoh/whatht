@@ -5,30 +5,46 @@
 <% else %>
 You have to be signed in to create new posts.
 <% end %>
+
+<br>
+<br>
+
+<div class="btn-group" role="group" aria-label="Basic example">
+  <button type="button" class="btn btn-warning">Show All</button>
+  <button type="button" class="btn btn-dark">Creatures</button>
+  <button type="button" class="btn btn-success">Objects</button>
+  <button type="button" class="btn btn-danger">Medical</button>
 </div>
-<br>
-<br>
+
+</div>
+</br>
+
 <div class="container"> 
 <div class="card-deck">
 <% @posts.each do |post| %>
 <% if post.category == "Creatures" %>
 <div class="card text-white bg-dark mb-3 mx-auto" style="min-width: 16rem; max-width: 17rem;">
 <% elsif post.category == "Objects" %>
-<div class="card text-white bg-primary mb-3 mx-auto" style="min-width: 16rem; max-width: 17rem;">
-<% elsif post.category == "Medical" %>
 <div class="card text-white bg-success mb-3 mx-auto" style="min-width: 16rem; max-width: 17rem;">
+<% elsif post.category == "Medical" %>
+<div class="card text-white bg-danger mb-3 mx-auto" style="min-width: 16rem; max-width: 17rem;">
 <% end %>
+ 
   <div class="card-header">
     <h5><%= post.category %></h5>
   </div>
+ 
   <img class="card-img-top" src="<%= post.image %>" alt="Card image cap" style="height: auto; width: auto; max-height: 10rem;">
+ 
   <div class="card-body">
     <h5 class="card-title"><%= post.title %></h5>
     <p class="card-text"><%= post.body %><p>
   </div>
+ 
   <div>
   <%= commontator_thread(post) %>
   </div>
+ 
   <div class="card-footer text-center" style="text-decoration: none;">
   <% if current_user == (post.user) %>
     <a href="#" class="card-link active"><%= link_to 'View', post, {:style=>'color:#FFFFFF;', :class => "css_class"} %></a>
@@ -38,11 +54,15 @@ You have to be signed in to create new posts.
     <a href="#" class="card-link active"><%= link_to 'View', post, {:style=>'color:#FFFFFF;', :class => "css_class"} %></a>
   <% end %>
   </div>
-  <div class="card-footer text-muted">
+ 
+  <div class="card-footer">
     <%= post.created_at %>
   </div>
+
 </div>
+
 <% end %>
+
 </div>
 </div>
 
