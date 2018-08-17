@@ -57,10 +57,20 @@
         WHATHT
       </h1>
     </div>
+
+    <br>
+    <br>
+
     <% if user_signed_in? %>
     <div class="col-md-12 text-center">
       <h2 style="font-family: 'Frijole', cursive; color: white; width: 20rem auto; text-decoration: none;">
         <%= link_to 'Go to Posts', posts_path %>
+      </h2>
+    </div>
+    <% else %>
+    <div class="col-md-12 text-center">
+      <h2 style="font-family: 'Frijole', cursive; color: dark; width: 5rem auto; text-decoration: none;">
+        <%= link_to 'Sign In', new_user_session_url, {:style=>'color:red; font-size: 2rem; font-family: Frijole ', :class => "css_class"} %><span> or </span><%= link_to 'Sign Up', new_user_registration_path, {:style=>'color:red; font-size: 2rem; font-family: Frijole ', :class => "css_class"} %> to Enter.
       </h2>
     </div>
     <% end %>
